@@ -2,10 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: "kubelab"
-  #label é um etiqueta que pode ser usada para identificar o pod
   labels:
     app: "kubelab"
-#especificação do pod / 1 container por pod
 spec:
   containers:
     - name: kubelab

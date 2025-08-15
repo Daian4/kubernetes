@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: "kubelab"
+  labels:
+    app: "kubelab"
+spec:
+  selector:
+    matchLabels:
+      app: kubelab
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kubelab"
+    spec:
+      containers:
+        - name: kubelab
+          image: "daimnezes/hello-go"
