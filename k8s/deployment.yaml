@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: kubelab
-  replicas: 2
+  replicas: 4
   template:
     metadata:
       labels:
@@ -16,4 +16,6 @@ spec:
     spec:
       containers:
         - name: kubelab
-          image: "daimnezes/hello-go:v2"
+          image: "daimnezes/hello-go:v3"
+          ports:
+            - containerPort: 3001

@@ -1,0 +1,13 @@
+apiVersion: v1 
+kind: Service
+metadata:
+  name: kubelab-service
+spec:
+  selector:
+    app: kubelab
+  type: ClusterIP
+  ports:
+    - name: kubelab-service
+      port: 80
+      targetPort: 3001
+      protocol: TCP
