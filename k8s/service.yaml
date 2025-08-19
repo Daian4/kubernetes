@@ -5,9 +5,10 @@ metadata:
 spec:
   selector:
     app: kubelab
-  type: ClusterIP
+  type: NodePort
   ports:
     - name: kubelab-service
       port: 80
       targetPort: 3001
       protocol: TCP
+      nodePort: 30001
