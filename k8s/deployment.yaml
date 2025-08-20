@@ -16,6 +16,17 @@ spec:
     spec:
       containers:
         - name: kubelab
-          image: "daimnezes/hello-go:v3"
-          ports:
-            - containerPort: 3001
+          image: "daimnezes/hello-go:v5.1"
+          envFrom:
+            - configMapRef:
+                name: kubelab-env
+          volumeMounts:
+            - mountPath: "/go/myfamily"
+              name: config
+      volumes:
+        - name: config
+          configMap:
+            name: configmap-family
+            items:
+            - key: members
+              path: "family.txt"

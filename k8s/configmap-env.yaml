@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubelab-env
+data:
+  NAME: "Daiana"
+  AGE: "26"
+
