@@ -16,10 +16,12 @@ spec:
     spec:
       containers:
         - name: kubelab
-          image: "daimnezes/hello-go:v5.1"
+          image: "daimnezes/hello-go:v5.2"
           envFrom:
             - configMapRef:
                 name: kubelab-env
+            - secretRef:
+                name: kubelab-secret
           volumeMounts:
             - mountPath: "/go/myfamily"
               name: config

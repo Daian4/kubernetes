@@ -9,9 +9,16 @@ import (
 )
 
 func main() {
+	http.HandleFunc("/secret", secret)
 	http.HandleFunc("/configmap", ConfigMap)
 	http.HandleFunc("/", Hello)
 	http.ListenAndServe(":3001", nil)
+}
+
+func secret(w http.ResponseWriter, r *http.Request) {
+	user := os.Getenv("USER")
+	password := os.Getenv("PASSWORD")
+	fmt.Fprintf(w, "User: %s Password: %s.", user, password)
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
