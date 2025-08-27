@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Daian4/kubernetes-curso/compare/v1.0.0...v1.1.0) (2025-08-27)
+
+
+### Features
+
+* add health, secret, and configmap endpoints with probes and env integration ([cbf2b10](https://github.com/Daian4/kubernetes-curso/commit/cbf2b10e90c9452f1f934b7c9bf429fa864a5f78))
+
 # 1.0.0 (2025-08-21)
 
 
