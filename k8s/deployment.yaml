@@ -17,17 +17,19 @@ spec:
       containers:
         - name: kubelab
           image: "daimnezes/hello-go:v5.3"
+
           startupProbe:
             httpGet:
               path: /healthz
-              port: 3001
-            periodSeconds: 4
-            failureThreshold: 30
+              port: 8000
+            periodSeconds: 3
+            failureThreshold: 1
+            initialDelaySeconds: 30
 
           readinessProbe:
             httpGet:
               path: /healthz
-              port: 3001
+              port: 8000
             periodSeconds: 3
             failureThreshold: 1
             #initialDelaySeconds: 10
@@ -35,12 +37,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 3001
+              port: 8000
             periodSeconds: 5
             failureThreshold: 3
             timeoutSeconds: 1
             successThreshold: 1
-            #initialDelaySeconds: 15
+            initialDelaySeconds: 10
 
           envFrom:
             - configMapRef:
