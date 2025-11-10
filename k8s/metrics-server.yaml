@@ -36,18 +36,21 @@ rules:
 - apiGroups:
   - ""
   resources:
-  - nodes/metrics
-  verbs:
-  - get
-- apiGroups:
-  - ""
-  resources:
   - pods
   - nodes
+  - nodes/stats
+  - namespaces
+  - configmaps
   verbs:
   - get
   - list
   - watch
+- apiGroups:
+  - ""
+  resources:
+  - nodes/metrics
+  verbs:
+  - get
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -199,5 +202,6 @@ spec:
   service:
     name: metrics-server
     namespace: kube-system
+    port: 443
   version: v1beta1
   versionPriority: 100
