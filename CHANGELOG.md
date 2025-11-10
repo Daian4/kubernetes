@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Daian4/kubernetes-curso/compare/v1.1.0...v1.2.0) (2025-11-10)
+
+
+### Features
+
+* add resources ([a96af07](https://github.com/Daian4/kubernetes-curso/commit/a96af07f0e03b057d5e30f7b021e4a92e7441d9c))
+
 # [1.1.0](https://github.com/Daian4/kubernetes-curso/compare/v1.0.0...v1.1.0) (2025-08-27)
 
 
